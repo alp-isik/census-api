@@ -28,13 +28,13 @@ All endpoints require Basic Auth (demo login: admin, password: P4ssword).
    cd census-api
    npm install
 
-2. Create a .env file in the project root (see .env.example):
+2. Create a .env file in the project root:
 
-   DB_HOST=your-db-host.aivencloud.com
-   DB_PORT=your-db-port
-   DB_USER=your-db-user
-   DB_PASSWORD=your-db-password
-   DB_NAME=your-db-name
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_USER=root
+   DB_PASSWORD=your-local-mysql-password
+   DB_NAME=census_db
    PORT=3000
 
 3. Start the server:
