@@ -25,7 +25,9 @@ All endpoints require Basic Auth (demo login: admin, password: P4ssword).
 1. Clone the repo and install dependencies:
 
    git clone https://github.com/alp-isik/census-api.git
+   
    cd census-api
+   
    npm install
 
 2. Create a .env file in the project root:
