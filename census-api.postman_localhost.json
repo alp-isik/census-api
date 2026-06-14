@@ -1,0 +1,181 @@
+{
+  "info": {
+    "name": "Census API - Server Deployment - localhost",
+    "description": "Postman collection for the Census API. All endpoints require Basic Auth (admin / P4ssword).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Participant",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants/add",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants", "add"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"participant\": {\n    \"email\": \"john@example.com\",\n    \"firstname\": \"John\",\n    \"lastname\": \"Doe\",\n    \"dob\": \"1990-05-15\"\n  },\n  \"work\": {\n    \"companyname\": \"Apple\",\n    \"salary\": 90000,\n    \"currency\": \"USD\"\n  },\n  \"home\": {\n    \"country\": \"USA\",\n    \"city\": \"New York\"\n  }\n}",
+          "options": { "raw": { "language": "json" } }
+        }
+      }
+    },
+    {
+      "name": "Get All Participants",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants"]
+        }
+      }
+    },
+    {
+      "name": "Get All Details",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants/details",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants", "details"]
+        }
+      }
+    },
+    {
+      "name": "Get Details by Email",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants/details/john@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants", "details", "john@example.com"]
+        }
+      }
+    },
+    {
+      "name": "Get Work by Email",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants/work/john@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants", "work", "john@example.com"]
+        }
+      }
+    },
+    {
+      "name": "Get Home by Email",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants/home/john@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants", "home", "john@example.com"]
+        }
+      }
+    },
+    {
+      "name": "Update Participant",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants/john@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants", "john@example.com"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"participant\": {\n    \"firstname\": \"Johnny\",\n    \"lastname\": \"Doe\",\n    \"dob\": \"1990-05-15\"\n  },\n  \"work\": {\n    \"companyname\": \"Google\",\n    \"salary\": 120000,\n    \"currency\": \"USD\"\n  },\n  \"home\": {\n    \"country\": \"USA\",\n    \"city\": \"San Francisco\"\n  }\n}",
+          "options": { "raw": { "language": "json" } }
+        }
+      }
+    },
+    {
+      "name": "Delete Participant",
+      "request": {
+        "method": "DELETE",
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "admin", "type": "string" },
+            { "key": "password", "value": "P4ssword", "type": "string" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/participants/john@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["participants", "john@example.com"]
+        }
+      }
+    }
+  ]
+}
